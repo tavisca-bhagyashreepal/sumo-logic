@@ -1,0 +1,141 @@
+.popup{
+  position:relative;
+  width:100%;
+  height:400px;
+  margin-left:auto;
+  margin-right:auto;
+  background-color:rgba(128, 128, 128, 0.09);
+  padding:20px;
+}
+
+.close{
+  position:absolute;
+  right:10px;
+  color:rgba(0, 0, 0, 0.51);
+  font-weight: normal;
+}
+
+.selection{
+  position:relative;
+  width:100%;
+}
+
+#team{
+  margin-top:20px;
+}
+#member{
+  margin-top:70px;
+}
+
+h2{
+  font-weight:400;
+}
+
+.selectName{
+  position: absolute;
+  left:0px;
+  top:56px;
+  width:100%;
+  list-style:none;
+  padding-left:0px;
+  border:solid 1px black;
+  background-color:white;
+  z-index:1;
+}
+
+li{
+  border-bottom:solid 1px black;
+}
+
+li:last-child{
+  border-bottom:none;
+}
+
+
+[type= "checkbox"]{
+  vertical-align: middle;
+}
+
+.checkbox{
+  margin-top:20px;
+}
+
+#txtName{
+  width:100%;
+  height: 25px;
+}
+.container{
+  width:200px;
+  margin:auto;
+  margin-top:20px;
+}
+
+.combobox{
+  position:relative;
+  margin-bottom:30px;
+  margin-top:5px;
+  input{
+    padding:5px;
+    width:100%;
+    border-radius:1px;
+    border:1px solid rgba(128, 128, 128, 0.21);
+    background-color: rgba(128, 128, 128, 0.21);
+    &:focus{
+      background-color: white;
+    }
+  }
+  ul{
+    position:absolute;
+    background:#fff;
+    width:100%;
+    border-radius:1px;
+    margin:0;
+    padding:0;
+    display:block;
+    border:1px solid #ccc;
+    z-index:2;
+    li{
+      padding:3px 10px;
+      display:block;
+      cursor:pointer;
+      border-bottom:1px solid #ccc;
+      p{font-size:12px} &:hover{background:lighten(#00B0F2,15%)}}
+  }
+}
+
+.arrow{
+  position:absolute;
+  width: 0;
+  height: 0;
+  top:15px;
+  right: 10px;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid black;
+}
+
+#functionButtons{
+  float:right;
+  [type="button"]{
+    border:1px solid rgba(128, 128, 128, 0.21);
+    background-color: rgba(128, 128, 128, 0.21);
+    width:80px;
+    box-shadow: none;
+    &:hover{
+      background-color: #00aff0;
+    }
+  }
+}
+
+.margin-set-error{
+  margin-top:15px;
+}
+
+.margin-set{
+  margin-top:85px;
+}
+
+.btnDialogue{
+  margin-left:auto;
+  margin-right:auto;
+}

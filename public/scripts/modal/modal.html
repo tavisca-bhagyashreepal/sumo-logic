@@ -1,0 +1,43 @@
+<div class="modal-header">
+  <div class="popup">
+    <span class="close" confirmed-click="modal.closeModal()" confirm-directive="'You have made few changes, are you sure to cancel?'" ng-if="modal.team">x</span>
+    <span class="close" ng-click="modal.closeModal();" ng-if="!modal.team">x</span>
+    <h2 style="color:#00aff0;">Select an Employee</h2>
+    <div class="checkbox">
+     <div>
+      <input type="checkbox"/>
+      <span>Send welcome email to employee</span>
+     </div>
+    </div>
+    <div class="selection" id="team">
+      <h6>Select a Team in the Organization</h6>
+      <div class="container">
+        <div class="combobox">
+          <input type="text" placeholder="Select Team..." ng-model="modal.team" ng-focus="modal.dropdownTeam=true" ng-keyup="modal.search('team')" ng-change="modal.employee =''"/>
+          <div class="arrow"></div>
+          <ul ng-if="modal.dropdownTeam" >
+            <li ng-repeat="term in modal.teamsToShow" ng-click="modal.onSelect($event,'team',term)">{{term}}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="selection" id="member">
+      <h6>Select an Employee</h6>
+      <div class="container">
+        <div class="combobox">
+          <input type="text" placeholder="Select Employee..." ng-model="modal.employee" ng-focus="modal.dropdownEmployee=true" ng-keyup="modal.search('employee')" />
+          <div class="arrow"></div>
+          <ul ng-if="modal.dropdownEmployee" >
+            <li ng-repeat="term in modal.employeesToShow" ng-click="modal.onSelect($event,'employee',term)">{{term}}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div style="margin-top:50px" ng-if="modal.ok && modal.team!='' && modal.teams.indexOf(modal.team)==-1 "><span style="color:red;">Entered team is not available</span></div>
+    <div id="functionButtons" ng-class="modal.ok && modal.team!='' && modal.teams.indexOf(modal.team)==-1 ? 'margin-set-error': 'margin-set'">
+      <input type="button" value="Cancel" confirmed-click="modal.closeModal()" confirm-directive="'You have made few changes, are you sure to cancel?'" ng-if="modal.team"/>
+      <input type="button" value="Cancel" ng-click="modal.closeModal()" ng-if="!modal.team"/>
+      <input type="button" value="OK" ng-click="modal.closeModal(true)"/>
+    </div>
+  </div>
+</div>
